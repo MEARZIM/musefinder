@@ -48,7 +48,7 @@ const page = ({
     })
 
     const adultPrice = museums?.ticketPrice;
-    const childPrice = 8
+
 
 
     function onSubmit(values: z.infer<typeof formSchema>) {
@@ -75,16 +75,22 @@ const page = ({
             setIsLoading(false);
         }
     };
-
     useEffect(() => {
         getAllMuseumLists();
-        
-        // Only calculate totalPrice if adultPrice is defined
+    }, []);
+
+    useEffect(() => {
         if (adultPrice !== undefined) {
-            setTotalPrice((form.watch("adultTickets") || 0) * adultPrice);
+            // Access the form state using useWatch, and watch for the "adultTickets" field
+            const adultTickets = form.watch("adultTickets");
+            console.log(adultTickets)
+            setTotalPrice(adultTickets * adultPrice);
         }
-      }, [params.id, adultPrice]);
-      
+    }, [form.watch("adultTickets"), adultPrice]);
+
+
+
+
 
     if (isLoading) {
         return (
@@ -132,34 +138,37 @@ const page = ({
                                     </FormItem>
                                 )}
                             />
-                           
-                                <FormField
-                                    control={form.control}
-                                    name="adultTickets"
-                                    render={({ field }) => (
-                                        <FormItem>
-                                            <FormLabel>Adult Tickets {museums?.ticketPrice} {`/-`}</FormLabel>
-                                            <FormControl>
-                                                <Input
-                                                    type="number"
-                                                    min={1}
-                                                    {...field}
-                                                    onChange={(e) => field.onChange(parseInt(e.target.value))}
-                                                    className="w-full"
-                                                />
-                                            </FormControl>
-                                            <FormDescription>Number of adult tickets.</FormDescription>
-                                            <FormMessage />
-                                        </FormItem>
-                                    )}
-                                />
-                               
-                            
+
+                            <FormField
+                                control={form.control}
+                                name="adultTickets"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Adult Tickets {museums?.ticketPrice} {`/-`}</FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                type="number"
+                                                min={1}
+                                                {...field}
+                                                onChange={(e) => field.onChange(parseInt(e.target.value))}
+                                                className="w-full"
+                                            />
+                                        </FormControl>
+                                        <FormDescription>Number of adult tickets.</FormDescription>
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+
+
                             <div className="grid gap-2">
                                 <h3 className="text-lg font-semibold">Booking Summary</h3>
                                 <p>Date: {date?.toDateString() || "Not selected"}</p>
                                 <p>Adult Tickets: {form.watch("adultTickets") || 0}</p>
-                                <p className="text-xl font-bold">Total Price: {totalPrice} {`/-`}</p>
+                                <p className="text-xl font-bold">
+                                    Total Price: {!Number.isNaN(totalPrice) && totalPrice > 0 ? totalPrice : 0} {`/-`}
+                                </p>
+
                             </div>
                         </CardContent>
                         <CardFooter>
