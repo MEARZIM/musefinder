@@ -51,7 +51,7 @@ const ConversationPage = () => {
 
             const response = await axios.post('/api/conversation', { messages: newMessages });
             setMessages((current: any) => [...current, userMessage, response.data]);
-
+            // console.log(response.data)
             form.reset();
 
         } catch (error: any) {
@@ -65,7 +65,7 @@ const ConversationPage = () => {
         }
     }
 
-    // console.log(messages)
+    console.log(messages[1])
     return (
         <div className="m-10">
             <Heading
@@ -113,8 +113,8 @@ const ConversationPage = () => {
                             <div
                                 key={message.content}
                                 className={cn(
-                                    "p-8 w-full flex items-start gap-x-8 rounded-lg",
-                                    message.role === "user" ? "bg-white border border-black/10" : "bg-muted",
+                                    "p-8 w-full text-black flex items-start gap-x-8 rounded-lg",
+                                    message.role === "user" ? "bg-white text-black border border-black/10" : "bg-muted",
                                 )}
                             >
                                 {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
