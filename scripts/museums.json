@@ -1,0 +1,398 @@
+[
+  {
+    "name": "Louvre Museum",
+    "description": "A famous museum located in Paris, France, home to the Mona Lisa.",
+    "img": "https://example.com/louvre.jpg",
+    "ticketPrice": 17,
+    "location": "Paris, France",
+    "rating": 4.9,
+    "coordinates": {
+      "latitude": 48.8606,
+      "longitude": 2.3376
+    }
+  },
+  {
+    "name": "British Museum",
+    "description": "A museum in London dedicated to human history, art, and culture.",
+    "img": "https://example.com/british_museum.jpg",
+    "ticketPrice": 0,
+    "location": "London, UK",
+    "rating": 4.8,
+    "coordinates": {
+      "latitude": 51.5194,
+      "longitude": -0.1270
+    }
+  },
+  {
+    "name": "Metropolitan Museum of Art",
+    "description": "One of the largest and finest art museums in the world.",
+    "img": "https://example.com/met_museum.jpg",
+    "ticketPrice": 25,
+    "location": "New York, USA",
+    "rating": 4.7,
+    "coordinates": {
+      "latitude": 40.7794,
+      "longitude": -73.9632
+    }
+  },
+  {
+    "name": "Vatican Museums",
+    "description": "The Vatican Museums display works from the immense collection amassed by the Roman Catholic Church.",
+    "img": "https://example.com/vatican_museum.jpg",
+    "ticketPrice": 17,
+    "location": "Vatican City",
+    "rating": 4.8,
+    "coordinates": {
+      "latitude": 41.9065,
+      "longitude": 12.4533
+    }
+  },
+  {
+    "name": "Van Gogh Museum",
+    "description": "A museum in Amsterdam dedicated to the works of Vincent van Gogh.",
+    "img": "https://example.com/van_gogh.jpg",
+    "ticketPrice": 19,
+    "location": "Amsterdam, Netherlands",
+    "rating": 4.6,
+    "coordinates": {
+      "latitude": 52.3584,
+      "longitude": 4.8811
+    }
+  },
+  {
+    "name": "Uffizi Gallery",
+    "description": "The Uffizi Gallery is a prominent art museum located adjacent to Piazza della Signoria in the Historic Centre of Florence in the region of Tuscany, Italy.",
+    "img": "https://example.com/uffizi_gallery.jpg",
+    "ticketPrice": 20,
+    "location": "Florence, Italy",
+    "rating": 4.7,
+    "coordinates": {
+      "latitude": 43.7687,
+      "longitude": 11.2559
+    }
+  },
+  {
+    "name": "Hermitage Museum",
+    "description": "A museum of art and culture in Saint Petersburg, Russia.",
+    "img": "https://example.com/hermitage.jpg",
+    "ticketPrice": 12,
+    "location": "Saint Petersburg, Russia",
+    "rating": 4.9,
+    "coordinates": {
+      "latitude": 59.9398,
+      "longitude": 30.3146
+    }
+  },
+  {
+    "name": "National Gallery",
+    "description": "An art museum in Trafalgar Square in the City of Westminster, in Central London.",
+    "img": "https://example.com/national_gallery.jpg",
+    "ticketPrice": 0,
+    "location": "London, UK",
+    "rating": 4.8,
+    "coordinates": {
+      "latitude": 51.5086,
+      "longitude": -0.1283
+    }
+  },
+  {
+    "name": "Museo del Prado",
+    "description": "The main Spanish national art museum, located in central Madrid.",
+    "img": "https://example.com/prado_museum.jpg",
+    "ticketPrice": 15,
+    "location": "Madrid, Spain",
+    "rating": 4.9,
+    "coordinates": {
+      "latitude": 40.4138,
+      "longitude": -3.6921
+    }
+  },
+  {
+    "name": "Rijksmuseum",
+    "description": "A Dutch national museum dedicated to arts and history in Amsterdam.",
+    "img": "https://example.com/rijksmuseum.jpg",
+    "ticketPrice": 20,
+    "location": "Amsterdam, Netherlands",
+    "rating": 4.8,
+    "coordinates": {
+      "latitude": 52.3599,
+      "longitude": 4.8852
+    }
+  },
+  {
+    "name": "Museo Nacional de Antropología",
+    "description": "A national museum of anthropology in Mexico City.",
+    "img": "https://example.com/museo_antropologia.jpg",
+    "ticketPrice": 4,
+    "location": "Mexico City, Mexico",
+    "rating": 4.8,
+    "coordinates": {
+      "latitude": 19.4260,
+      "longitude": -99.1860
+    }
+  },
+  {
+    "name": "Museum of Modern Art (MoMA)",
+    "description": "An art museum in Midtown Manhattan, New York City.",
+    "img": "https://example.com/moma.jpg",
+    "ticketPrice": 25,
+    "location": "New York, USA",
+    "rating": 4.7,
+    "coordinates": {
+      "latitude": 40.7614,
+      "longitude": -73.9776
+    }
+  },
+  {
+    "name": "State Tretyakov Gallery",
+    "description": "An art gallery in Moscow, Russia, the foremost depository of Russian fine art.",
+    "img": "https://example.com/tretyakov_gallery.jpg",
+    "ticketPrice": 9,
+    "location": "Moscow, Russia",
+    "rating": 4.7,
+    "coordinates": {
+      "latitude": 55.7415,
+      "longitude": 37.6202
+    }
+  },
+  {
+    "name": "National Museum of China",
+    "description": "A museum of Chinese history and art, located in Beijing, China.",
+    "img": "https://example.com/national_museum_china.jpg",
+    "ticketPrice": 0,
+    "location": "Beijing, China",
+    "rating": 4.6,
+    "coordinates": {
+      "latitude": 39.9042,
+      "longitude": 116.4074
+    }
+  },
+  {
+    "name": "Musee d'Orsay",
+    "description": "A museum in Paris, France, on the left bank of the Seine. It is housed in the former Gare d'Orsay.",
+    "img": "https://example.com/musee_orsay.jpg",
+    "ticketPrice": 14,
+    "location": "Paris, France",
+    "rating": 4.8,
+    "coordinates": {
+      "latitude": 48.8600,
+      "longitude": 2.3266
+    }
+  },
+  {
+    "name": "Art Institute of Chicago",
+    "description": "An art museum in Chicago, one of the oldest and largest art museums in the United States.",
+    "img": "https://example.com/art_institute_chicago.jpg",
+    "ticketPrice": 25,
+    "location": "Chicago, USA",
+    "rating": 4.7,
+    "coordinates": {
+      "latitude": 41.8796,
+      "longitude": -87.6237
+    }
+  },
+  {
+    "name": "Guggenheim Museum",
+    "description": "A museum of modern and contemporary art in New York City.",
+    "img": "https://example.com/guggenheim.jpg",
+    "ticketPrice": 25,
+    "location": "New York, USA",
+    "rating": 4.6,
+    "coordinates": {
+      "latitude": 40.7829,
+      "longitude": -73.9580
+    }
+  },
+  {
+    "name": "Tokyo National Museum",
+    "description": "The oldest Japanese national museum, with a focus on traditional Japanese art.",
+    "img": "https://example.com/tokyo_national.jpg",
+    "ticketPrice": 6,
+    "location": "Tokyo, Japan",
+    "rating": 4.7,
+    "coordinates": {
+      "latitude": 35.7188,
+      "longitude": 139.7765
+    }
+  },
+  {
+    "name": "Pergamon Museum",
+    "description": "A museum in Berlin, famous for its monumental reconstruction of ancient buildings.",
+    "img": "https://example.com/pergamon.jpg",
+    "ticketPrice": 12,
+    "location": "Berlin, Germany",
+    "rating": 4.8,
+    "coordinates": {
+      "latitude": 52.5211,
+      "longitude": 13.3969
+    }
+  },
+  {
+    "name": "Israel Museum",
+    "description": "The largest cultural institution in the State of Israel and one of the leading encyclopedic museums in the world.",
+    "img": "https://example.com/israel_museum.jpg",
+    "ticketPrice": 12,
+    "location": "Jerusalem, Israel",
+    "rating": 4.6,
+    "coordinates": {
+      "latitude": 31.7767,
+      "longitude": 35.2025
+    }
+  },
+  {
+    "name": "Smithsonian National Museum of Natural History",
+    "description": "A natural history museum located in Washington, D.C.",
+    "img": "https://example.com/smithsonian_natural_history.jpg",
+    "ticketPrice": 0,
+    "location": "Washington, D.C., USA",
+    "rating": 4.8,
+    "coordinates": {
+      "latitude": 38.8913,
+      "longitude": -77.0261
+    }
+  },
+  {
+    "name": "Museo Reina Sofia",
+    "description": "A museum in Madrid, primarily dedicated to Spanish art.",
+    "img": "https://example.com/reina_sofia.jpg",
+    "ticketPrice": 10,
+    "location": "Madrid, Spain",
+    "rating": 4.6,
+    "coordinates": {
+      "latitude": 40.4089,
+      "longitude": -3.6944
+    }
+  },
+  {
+    "name": "Acropolis Museum",
+    "description": "An archaeological museum focused on the findings of the Acropolis of Athens.",
+    "img": "https://example.com/acropolis.jpg",
+    "ticketPrice": 10,
+    "location": "Athens, Greece",
+    "rating": 4.9,
+    "coordinates": {
+      "latitude": 37.9686,
+      "longitude": 23.7281
+    }
+  },
+  {
+    "name": "Museum of Fine Arts, Boston",
+    "description": "One of the most comprehensive art museums in the world.",
+    "img": "https://example.com/mfa_boston.jpg",
+    "ticketPrice": 25,
+    "location": "Boston, USA",
+    "rating": 4.7,
+    "coordinates": {
+      "latitude": 42.3393,
+      "longitude": -71.0942
+    }
+  },
+  {
+    "name": "National Palace Museum",
+    "description": "A vast collection of Chinese art and artifacts, in Taipei, Taiwan.",
+    "img": "https://example.com/national_palace.jpg",
+    "ticketPrice": 12,
+    "location": "Taipei, Taiwan",
+    "rating": 4.8,
+    "coordinates": {
+      "latitude": 25.1024,
+      "longitude": 121.5485
+    }
+  },
+  {
+    "name": "Shanghai Museum",
+    "description": "A museum of ancient Chinese art, situated in the People's Square in Shanghai.",
+    "img": "https://example.com/shanghai_museum.jpg",
+    "ticketPrice": 0,
+    "location": "Shanghai, China",
+    "rating": 4.7,
+    "coordinates": {
+      "latitude": 31.2304,
+      "longitude": 121.4737
+    }
+  },
+  {
+    "name": "National Museum of Korea",
+    "description": "The flagship museum of Korean history and art in Seoul, South Korea.",
+    "img": "https://example.com/national_museum_korea.jpg",
+    "ticketPrice": 0,
+    "location": "Seoul, South Korea",
+    "rating": 4.7,
+    "coordinates": {
+      "latitude": 37.5233,
+      "longitude": 126.9808
+    }
+  },
+  {
+    "name": "Museo Soumaya",
+    "description": "A private museum in Mexico City and one of the largest collections of art in Latin America.",
+    "img": "https://example.com/museo_soumaya.jpg",
+    "ticketPrice": 0,
+    "location": "Mexico City, Mexico",
+    "rating": 4.7,
+    "coordinates": {
+      "latitude": 19.4397,
+      "longitude": -99.2045
+    }
+  },
+  {
+    "name": "Musée du Louvre Lens",
+    "description": "A branch of the Louvre located in Lens, France.",
+    "img": "https://example.com/louvre_lens.jpg",
+    "ticketPrice": 11,
+    "location": "Lens, France",
+    "rating": 4.6,
+    "coordinates": {
+      "latitude": 50.4335,
+      "longitude": 2.8132
+    }
+  },
+  {
+    "name": "Museum of Egyptian Antiquities",
+    "description": "Home to an extensive collection of ancient Egyptian antiquities.",
+    "img": "https://example.com/egyptian_museum.jpg",
+    "ticketPrice": 10,
+    "location": "Cairo, Egypt",
+    "rating": 4.8,
+    "coordinates": {
+      "latitude": 30.0478,
+      "longitude": 31.2336
+    }
+  },
+  {
+    "name": "Victoria and Albert Museum",
+    "description": "The world's largest museum of applied and decorative arts and design, as well as sculpture.",
+    "img": "https://example.com/victoria_albert.jpg",
+    "ticketPrice": 0,
+    "location": "London, UK",
+    "rating": 4.8,
+    "coordinates": {
+      "latitude": 51.4966,
+      "longitude": -0.1722
+    }
+  },
+  {
+    "name": "Galleria Borghese",
+    "description": "An art gallery in Rome, Italy, housing a substantial part of the Borghese collection of paintings, sculpture and antiquities.",
+    "img": "https://example.com/borghese_gallery.jpg",
+    "ticketPrice": 13,
+    "location": "Rome, Italy",
+    "rating": 4.9,
+    "coordinates": {
+      "latitude": 41.9149,
+      "longitude": 12.4924
+    }
+  },
+  {
+    "name": "The State Russian Museum",
+    "description": "A museum in Saint Petersburg, Russia, dedicated to Russian fine art.",
+    "img": "https://example.com/russian_museum.jpg",
+    "ticketPrice": 8,
+    "location": "Saint Petersburg, Russia",
+    "rating": 4.7,
+    "coordinates": {
+      "latitude": 59.9398,
+      "longitude": 30.3350
+    }
+  }
+]
