@@ -30,11 +30,9 @@ export async function POST(req: Request) {
     }
 
     const session = event.data.object as Stripe.Checkout.Session;
+    console.log(session);
 
     if (event.type === "checkout.session.completed") {
-        // const subscription = await stripe.subscriptions.retrieve(
-        //     session.subscription as string,
-        // );
 
         if (!session?.metadata?.userId) {
             return new NextResponse("UserId is required", {
@@ -44,10 +42,15 @@ export async function POST(req: Request) {
 
         await db.userBookedTicket.create({
             data: {
-                userId: session.metadata.userId,
-                museum: {}
-            }
-        })
+              userId: session.metadata.userId,
+              museum: {
+                connect: {
+                  id: session.metadata.museumId,
+                },
+              },
+            },
+          });
+       
     }
 
 

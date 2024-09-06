@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/form"
 import { MuseumProps, Skeleton } from "../page"
 import axios from "axios"
+import { Zap } from "lucide-react"
 
 const formSchema = z.object({
     date: z.date({
@@ -37,6 +38,7 @@ const page = ({
 
     const [museums, setMuseums] = useState<MuseumProps>();
     const [isLoading, setIsLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [totalPrice, setTotalPrice] = useState(0);
     const [date, setDate] = useState<Date | undefined>(undefined)
 
@@ -51,9 +53,26 @@ const page = ({
 
 
 
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        console.log(values)
-        // Here you would typically send the data to your backend
+    async function onSubmit(values: z.infer<typeof formSchema>) {
+        try {
+            setLoading(true)
+            const response = await axios.post("/api/stripe",{
+                value: values,
+                museumId: params.id,
+                totalPrice: totalPrice,
+            });
+
+            if(typeof(response.data.url) === "object"){
+                window.location.href = response.data.url.url;
+            } else {
+                window.location.href = response.data.url;
+            }
+
+        } catch (error) {
+            console.log(error)
+        } finally {
+            setLoading(false)
+        }
     }
 
     const today = new Date()
@@ -144,7 +163,7 @@ const page = ({
                                 name="adultTickets"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Adult Tickets {museums?.ticketPrice} {`/-`}</FormLabel>
+                                        <FormLabel>Adult Tickets  ${museums?.ticketPrice}</FormLabel>
                                         <FormControl>
                                             <Input
                                                 type="number"
@@ -166,13 +185,16 @@ const page = ({
                                 <p>Date: {date?.toDateString() || "Not selected"}</p>
                                 <p>Adult Tickets: {form.watch("adultTickets") || 0}</p>
                                 <p className="text-xl font-bold">
-                                    Total Price: {!Number.isNaN(totalPrice) && totalPrice > 0 ? totalPrice : 0} {`/-`}
+                                    Total Price: ${!Number.isNaN(totalPrice) && totalPrice > 0 ? totalPrice : 0} 
                                 </p>
 
                             </div>
                         </CardContent>
                         <CardFooter>
-                            <Button type="submit" className="w-full">Proceed to Checkout</Button>
+                            <Button variant="default" disabled={loading} type="submit" className="w-full">
+                                process to checkout
+                                <Zap className="w-4 h-4 fill-white" />
+                            </Button>
                         </CardFooter>
                     </form>
                 </Form>

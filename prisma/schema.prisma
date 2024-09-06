@@ -20,7 +20,7 @@ model Museum {
   description String
   img         String?
   ticketPrice Int
-  location    String
+  city    String
   rating      Int
   bookedTickets UserBookedTicket[] 
 }
@@ -30,5 +30,5 @@ model UserBookedTicket {
   userId           String   @unique
   museumId         String   
   museum           Museum   @relation(fields: [museumId], references: [id]) 
-  stripeCustomerId String?  @unique @map(name: "stripe_customer_id")
+  timeStamp        DateTime @default(now())
 }

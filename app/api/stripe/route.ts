@@ -8,11 +8,17 @@ import { absoluteUrlForStripe } from "@/lib/utils";
 const settingsUrl = absoluteUrlForStripe("/settings");
 
 
-export async function GET() {
+export async function POST(
+    req: Request
+) {
     try {
 
         const { userId } = auth();
         const user = await currentUser();
+
+        const body = await req.json();
+        const { value, museumId, totalPrice } = body;
+        console.log(value)
 
         if (!userId || !user) {
             new NextResponse("UnAuthorized User", { status: 401 })
@@ -45,15 +51,16 @@ export async function GET() {
                 price_data: {
                     currency:"USD",
                     product_data:{
-                        name: "National Museum Booking Service",
-                        description: "Unlimited AI Generations"
+                        name: "MuseFine Booking Service",
+                        description: "Book your museum ticket quickly"
                     },
-                    unit_amount: 2000,
+                    unit_amount: totalPrice,
                 },
-                quantity: 1,
+                quantity: value.adultTickets,
             }],
             metadata: {
                 userId,
+                museumId,
             }
         });
 
