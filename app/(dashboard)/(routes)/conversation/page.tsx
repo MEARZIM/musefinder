@@ -22,6 +22,7 @@ import { UserAvatar } from '@/components/layouts/User-Avatar/user-avatar';
 import { Empty } from '@/components/ui/empty';
 import { formSchema } from './constant';
 import { z } from 'zod';
+import { MdOutlineKeyboardVoice } from "react-icons/md";
 
 const ConversationPage = () => {
   const router = useRouter();
@@ -39,34 +40,28 @@ const ConversationPage = () => {
   const recognition = useRef<any>(null);
 
   useEffect(() => {
-  const SpeechRecognition =
-    window.SpeechRecognition || window.webkitSpeechRecognition;
-  if (SpeechRecognition) {
-    recognition.current = new SpeechRecognition();
-    recognition.current.continuous = true;
-    recognition.current.interimResults = true;
+    const SpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (SpeechRecognition) {
+      recognition.current = new SpeechRecognition();
+      recognition.current.continuous = true;
+      recognition.current.interimResults = true;
 
-    recognition.current.onresult = (event: any) => {
-      const transcript = Array.from(event.results)
-        .map((result: any) => result[0].transcript)
-        .join('');
-      form.setValue('prompt', transcript);
-    };
+      recognition.current.onresult = (event: any) => {
+        const transcript = Array.from(event.results)
+          .map((result: any) => result[0].transcript)
+          .join('');
+        form.setValue('prompt', transcript);
+      };
 
-    recognition.current.onerror = (event: any) => {
-      toast.error('Speech recognition error: ' + event.error);
-    };
-  } else {
-    toast.error('Speech recognition not supported in your browser.');
-  }
-}, []);
+      recognition.current.onerror = (event: any) => {
+        toast.error('Speech recognition error: ' + event.error);
+      };
+    } else {
+      toast.error('Speech recognition not supported in your browser.');
+    }
+  }, []);
 
-<<<<<<< HEAD
-            const response = await axios.post('/api/conversation', { messages: newMessages });
-            setMessages((current: any) => [...current, userMessage, response.data]);
-            // console.log(response.data)
-            form.reset();
-=======
   const startListening = () => {
     setIsListening(true);
     recognition.current?.start();
@@ -76,7 +71,6 @@ const ConversationPage = () => {
     setIsListening(false);
     recognition.current?.stop();
   };
->>>>>>> 7b3b6617d0f97e169612658e3e321712cc584775
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
@@ -88,7 +82,7 @@ const ConversationPage = () => {
       });
       setMessages((current: any) => [...current, userMessage, response.data]);
       // Trigger text-to-speech for the bot's response
-    speakResponse(response.data.content);
+      speakResponse(response.data.content);
 
       form.reset();
     } catch (error: any) {
@@ -102,78 +96,15 @@ const ConversationPage = () => {
     }
   };
 
-<<<<<<< HEAD
-    console.log(messages[1])
-    return (
-        <div className="m-10">
-            <Heading
-                title='Conversation'
-                description='Our most Advanced Conversation Model'
-                icon={MessageSquare}
-                iconColor='text-violet-500'
-                bgColor='bg-violet-500/10'
-            />
-            <div className="px-4 lg:px-8">
-                <div>
-                    <Form  {...form}>
-                        <form onSubmit={form.handleSubmit(onSubmit)} className="rounded-lg border w-full p-4 md:px-6 focus-within:shadow-sm grid grid-cols-12 gap-2 ">
-                            <FormField
-                                name="prompt"
-                                render={({ field }) => {
-                                    return (<FormItem className="col-span-12 lg:col-span-10">
-                                        <FormControl className="m-0 p-0">
-                                            <Input
-                                                className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
-                                                disabled={isLoading}
-                                                placeholder="How do i help you?"
-                                                {...field}
-                                            />
-                                        </FormControl>
-
-                                    </FormItem>);
-                                }}
-                            />
-                            <Button className="col-span-12 lg:col-span-2 w-full" disabled={isLoading}> Generate</Button>
-                        </form>
-                    </Form>
-                </div>
-                <div className="space-y-2 mt-4">
-                    {isLoading && (
-                        <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
-                            <Loader />
-                        </div>
-                    )}
-                    {messages.length === 0 && !isLoading && (
-                        <Empty label="No conversation started." />
-                    )}
-                    <div className="flex flex-col-reverse gap-y-4">
-                        {messages.map((message : any) => (
-                            <div
-                                key={message.content}
-                                className={cn(
-                                    "p-8 w-full text-black flex items-start gap-x-8 rounded-lg",
-                                    message.role === "user" ? "bg-white text-black border border-black/10" : "bg-muted",
-                                )}
-                            >
-                                {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
-                                <p className="text-sm">
-                                    {message.content}
-                                </p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-=======
   // Function for Text-to-Speech (TTS) for chatbot responses
-    const speakResponse = (text: string) => {
+  const speakResponse = (text: string) => {
     if ("speechSynthesis" in window) {
-        const utterance = new SpeechSynthesisUtterance(text);
-        speechSynthesis.speak(utterance);
+      const utterance = new SpeechSynthesisUtterance(text);
+      speechSynthesis.speak(utterance);
     } else {
-        toast.error("Text-to-speech is not supported in your browser.");
+      toast.error("Text-to-speech is not supported in your browser.");
     }
-    };
+  };
 
 
 
@@ -209,7 +140,7 @@ const ConversationPage = () => {
               <FormField
                 name="prompt"
                 render={({ field }) => (
-                  <FormItem className="col-span-12 lg:col-span-10">
+                  <FormItem className="col-span-12 lg:col-span-9">
                     <FormControl className="m-0 p-0">
                       <Input
                         className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
@@ -224,16 +155,16 @@ const ConversationPage = () => {
               <Button className="col-span-12 lg:col-span-2 w-full" disabled={isLoading}>
                 Generate
               </Button>
+              
+                {!isListening ? (
+                  <Button className="col-span-12 lg:col-span-1 w-full" onClick={startListening}><MdOutlineKeyboardVoice  size={20}/></Button>
+                ) : (
+                  <Button className="col-span-12 lg:col-span-1 w-full" onClick={stopListening}><MdOutlineKeyboardVoice  size={20}/></Button>
+                )}
+             
             </form>
           </Form>
-          <div className="flex justify-center mt-4">
-            {!isListening ? (
-              <Button onClick={startListening}>Start Voice Input</Button>
-            ) : (
-              <Button onClick={stopListening}>Stop Voice Input</Button>
-            )}
-          </div>
->>>>>>> 7b3b6617d0f97e169612658e3e321712cc584775
+
         </div>
 
         <div className="space-y-2 mt-4">
@@ -247,11 +178,10 @@ const ConversationPage = () => {
             {messages.map((message: any) => (
               <div
                 key={message.content}
-                className={`p-8 w-full text-black flex items-start gap-x-8 rounded-lg ${
-                  message.role === 'user'
+                className={`p-8 w-full text-black flex items-start gap-x-8 rounded-lg ${message.role === 'user'
                     ? 'bg-white text-black border border-black/10'
                     : 'bg-muted'
-                }`}
+                  }`}
               >
                 {message.role === 'user' ? <UserAvatar /> : <BotAvatar />}
                 <p className="text-sm">{message.content}</p>
