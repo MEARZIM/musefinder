@@ -193,7 +193,7 @@ const page = ({
                         <CardFooter>
                             <Button variant="default" disabled={loading} type="submit" className="w-full">
                                 process to checkout
-                                <Zap className="w-4 h-4 fill-white" />
+                                <Zap className="w-4 h-4 fill-white ml-2 text-yellow-400" />
                             </Button>
                         </CardFooter>
                     </form>

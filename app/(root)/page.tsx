@@ -6,11 +6,13 @@ import { ExpandableCard } from "@/components/layouts/LandingPage/ExpandableCard"
 
 export default function Home() {
   return (
-    <main className="">
+    <>
       <LandingNavbar />
-      <HeroSection />
-      {/* <ExpandableCard /> */}
-      <Footer />
-    </main>
+      <main className="max-w-7xl mx-auto">
+        <HeroSection />
+        {/* <ExpandableCard /> */}
+        <Footer />
+      </main>
+    </>
   );
 }
