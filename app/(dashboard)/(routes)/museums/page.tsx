@@ -80,11 +80,11 @@ const MuseumListPage = () => {
           This is the list of all the available museums.
         </div>
         <div className="flex gap-2 items-center">
-          <SignOutButton>
 
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <SignOutButton>
                   <Button
                     variant={"outline"}
                     size={"icon"}
@@ -92,14 +92,14 @@ const MuseumListPage = () => {
                   >
                     <LogOut className="h-4 w-4" />
                   </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Logout</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
+                </SignOutButton>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Logout</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
 
-          </SignOutButton>
         </div>
       </div>
       <BentoGrid className="max-w-4xl mx-auto">
