@@ -24,22 +24,6 @@ export async function POST(
             new NextResponse("UnAuthorized User", { status: 401 })
         }
 
-        // const userSubscription = await db.userSubScription.findUnique({
-        //     where:{
-        //         userId: userId!
-        //     }
-        // })
-
-
-        // if (userSubscription && userSubscription.stripeCustomerId) {
-        //     const stripeSession = await stripe.billingPortal.sessions.create({
-        //         customer: userSubscription.stripeCustomerId,
-        //         return_url: settingsUrl
-        //     });
-
-        //     return new NextResponse(JSON.stringify({url: stripeSession.url}));
-        // }
-
         const stripeSession = await stripe.checkout.sessions.create({
             success_url: settingsUrl,
             cancel_url: settingsUrl,
@@ -54,7 +38,7 @@ export async function POST(
                         name: "MuseFine Booking Service",
                         description: "Book your museum ticket quickly"
                     },
-                    unit_amount: totalPrice,
+                    unit_amount: totalPrice * 100,
                 },
                 quantity: value.adultTickets,
             }],
